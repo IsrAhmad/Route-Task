@@ -29,6 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
     HttpClientModule,
     MatIconModule,
     MatButtonModule,
+    // ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
