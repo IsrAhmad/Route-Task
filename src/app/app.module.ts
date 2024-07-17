@@ -11,6 +11,8 @@ import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -29,7 +31,10 @@ import { MatButtonModule } from '@angular/material/button';
     HttpClientModule,
     MatIconModule,
     MatButtonModule,
-    // ChartsModule
+    MatFormFieldModule,
+    MatIconModule,
+    MatTableModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

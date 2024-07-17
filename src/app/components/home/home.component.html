@@ -1,34 +1,39 @@
 <section class="container">
   <h2 class="fw-semibold">Customer Data</h2>
+  <mat-form-field appearance="fill">
+    <mat-label>Search by Name</mat-label>
+    <input matInput (keyup.enter)="filterByName($event)" placeholder="Ex. John Doe">
+  </mat-form-field>
   <ng-container *ngIf="transactionData?.length; else noData">
-    <mat-table class="text-center mt-4" [dataSource]="transactionData">
+    <mat-table class="text-center mt-4" [dataSource]="dataSource" matSort>
+
       <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef class="py-2 border-2 rounded-start-2">ID</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="py-2 border-2 rounded-start-2">ID</mat-header-cell>
         <mat-cell *matCellDef="let item" class="border-2 tdd">{{ item.id }}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef class="py-2 border-white border-2">Name</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="py-2 border-white border-2">Name</mat-header-cell>
         <mat-cell *matCellDef="let item" class="border-2 tdd">{{ getCustomerName(item.customer_id) }}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="customer_id">
-        <mat-header-cell *matHeaderCellDef class="py-2 border-white border-2">Customer ID</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="py-2 border-white border-2">Customer ID</mat-header-cell>
         <mat-cell *matCellDef="let item" class="border-2 tdd">{{ item.customer_id }}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="amount1">
-        <mat-header-cell *matHeaderCellDef class="py-2 border-white border-2">Amount 1</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="py-2 border-white border-2">Amount 1</mat-header-cell>
         <mat-cell *matCellDef="let item" class="border-2 tdd">{{ item.amount1 }}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="amount2">
-        <mat-header-cell *matHeaderCellDef class="py-2 border-white border-2">Amount 2</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="py-2 border-white border-2">Amount 2</mat-header-cell>
         <mat-cell *matCellDef="let item" class="border-2 tdd">{{ item.amount2 }}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="date">
-        <mat-header-cell *matHeaderCellDef class="py-2 th2 border-2 rounded-end-2">Date</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="py-2 th2 border-2 rounded-end-2">Date</mat-header-cell>
         <mat-cell *matCellDef="let item" class="border-2 tdd">{{ item.date | date : "dd/MM/yyyy" }}</mat-cell>
       </ng-container>
 
