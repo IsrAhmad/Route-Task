@@ -8,11 +8,10 @@ const routes: Routes = [
   { path: '', redirectTo:'home',pathMatch:'full' },
   { path: 'home', component: HomeComponent },
   { path: 'view-customer-data', component: ViewCustomerDataComponent },
-  { path: 'no-data', component: NoDataComponent },
-];
+  { path: '**', redirectTo: '', pathMatch: 'full' }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
