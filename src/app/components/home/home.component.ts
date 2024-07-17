@@ -82,4 +82,16 @@ export class HomeComponent implements OnInit {
       this.dataSource.data = [...this.originalTransactionData]; // Reset to original data if search is cleared
     }
   }
+
+  filterByAmount(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    const filterValue = parseFloat(target.value);
+    if (!isNaN(filterValue)) {
+      this.dataSource.data = this.originalTransactionData.filter((item: any) => {
+        return item.amount1 == filterValue || (item.amount2 !== null && item.amount2 == filterValue);
+      });
+    } else {
+      this.dataSource.data = [...this.originalTransactionData]; // Reset to original data if search is cleared
+    }
+  }
 }

@@ -4,6 +4,10 @@
     <mat-label>Search by Name</mat-label>
     <input matInput (keyup.enter)="filterByName($event)" placeholder="Ex. John Doe">
   </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Search by Amount</mat-label>
+    <input matInput type="number" (keyup.enter)="filterByAmount($event)" placeholder="Ex. 1000">
+  </mat-form-field>
   <ng-container *ngIf="transactionData?.length; else noData">
     <mat-table class="text-center mt-4" [dataSource]="dataSource" matSort>
 
