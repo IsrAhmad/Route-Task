@@ -44,4 +44,5 @@ app.listen(port, () => {
 });
 
 //TODO: node server.js
+//ng build --prod --base-href "https://israhmad.github.io/Route-Task/"
 
